@@ -1,0 +1,8 @@
+wap to print even index elements of an array
+wap to find the sum of all elements in an array
+wap to print even index sum and odd index sum
+find the element in the array
+find the first occurance in the array
+find how many even and odd elements are present in the array
+sort eleemnts in ascending and descending order
+add elements index wise in two arrays
