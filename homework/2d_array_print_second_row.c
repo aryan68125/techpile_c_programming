@@ -15,32 +15,25 @@ void display_array(int*arr, int row, int column){
     printf("\n");
   }
 }
-void search_array(int*arr, int row, int column, int number){
-  int row_number=0,column_number=0,flag=0;
-  for(int i=0;i<row;i++){
+void print_row(int*arr, int row, int column, int row_number){
+  int column_number=0;
     for(int j=0;j<column;j++){
-      //arr[i*column +j]
-      if(number == *(arr+i*column+j)){
-        row_number=i;
-        column_number=j;
-        flag=1;
-      }
-      //never put an else block inside the for loop otherwise it will overpower the if block
-      //and it will not return the searched value and will always return a false negative value.
+      //printing the row entered by the user
+      //*(arr+(row_number-1)*column+j)
+      /**
+       * you need to modify the normal array accessing code a little bit because
+       * row number starts from 0 hence we need to actually subtract 1 otherwise
+       * when accessing the last row you may go out of bounds
+       * hence put row_number-1 inside the *(arr+(row_number-1)*column+j) code
+       */
+      printf("%d ", *(arr+(row_number-1)*column+j));
     }
-  }
-  if(flag == 0){
-    printf("%d is not present in the 2d array\n",number);
-  }
-  else{
-    printf("%d is present in row %d and column %d in the 2d array\n", number,row_number,column_number);
-  }
 }
 int main(){
   int *arr; //array declaration
   int row;
   int column;
-  int number;
+  int row_number;
   printf("Enter the row for the 2d array\n");
   scanf("%d",&row);
   printf("Enter the column for the 2d array\n");
@@ -70,9 +63,9 @@ int main(){
     display_array(arr,row,column);
     
     //search the element in the array
-    printf("Enter the value that you want to search in the array\n");
-    scanf("%d",&number);
-    search_array(arr, row, column, number);
+    printf("Enter row which you want to print in the 2d array\n");
+    scanf("%d",&row_number);
+    print_row(arr, row, column, row_number);
   }
   free(arr);
 }
