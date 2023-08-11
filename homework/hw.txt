@@ -1,4 +1,4 @@
-wap to input 3x3 array and print the second row
-wap to input 3x4 array and print all the values in the last row
+-->wap to input 3x3 array and print the second row
+-->wap to input 3x4 array and print all the values in the last row
 wap to input 4x3 array and print all column values of all even rows
 wap to input 3x3 array and print last column value of each row
